@@ -1,0 +1,23 @@
+---test.py
+
+import webapp2
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        self.response.write("hello world assignment 1")
+
+app = webapp2.WSGIApplication([('/',MainPage)], debug=True)
+
+
+---app.yaml
+
+runtime: python27
+api_version: 1
+threadsafe: false
+
+handlers:
+- url: /
+  script: test.app
+
+---py google-cloud-sdk\bin\dev_appserver.py "C:\Users\hp\Desktop\this is cc\pr1"
+
